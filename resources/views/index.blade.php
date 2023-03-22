@@ -20,9 +20,9 @@
         <td><input type="text" id="name" name="lastname" required></td>
       </div>
       <div class="label">
-        <th></th><label for="性別">性別<span class="asterisk">※</span></label>
-        <td><input type="radio" name="性別" value="男" checked="checked"> 男性</td>
-        <td><input type="radio" name="性別" value="女"> 女性</td>
+        <th></th><label for="gender">性別<span class="asterisk">※</span></label>
+        <td><input type="radio" name="gender" value="男" checked="checked"> 男性</td>
+        <td><input type="radio" name="gender" value="女"> 女性</td>
 
       </div>
       <div class="label">
@@ -34,8 +34,8 @@
         〒<input type="text" name="postcode" pattern="\d{3}-?\d{4}" required>
       </div>
       <div class="label">
-        <label for="">住所<span class="asterisk">※</span></label>
-        <input type="text" id="adress" name="adress">
+        <label for="address">住所<span class="asterisk">※</span></label>
+        <input type="text" id="address" name="address">
       </div>
       <div class="label">
         <label for="email">メールアドレス<span class="asterisk">※</span></label>

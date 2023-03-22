@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'ContactController@index')->name('index');
 //確認ページ
-Route::post('/confirm', 'ContactController@confirm')->name('confirm');
+Route::post('/contact/confirm', 'ContactController@confirm')->name('contact.confirm');
 
 //送信完了ページ
-Route::post('/thanks', 'ContactController@send')->name('send');
+Route::post('/contact/thanks', 'ContactController@send')->name('contact.send');
