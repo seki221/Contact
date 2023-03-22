@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+//確認ページ
+Route::post('/confirm', 'ContactController@confirm')->name('confirm');
+
+//送信完了ページ
+Route::post('/thanks', 'ContactController@send')->name('send');
