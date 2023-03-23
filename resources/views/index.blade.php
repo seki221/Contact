@@ -47,24 +47,32 @@
       </div>
       <button type="submit" name="action" value="submit">確認</button>
     </div>
-
-
-
-
-
-
-    <td></td>
-    <th></th>
-    <td></td>
-    <th></th>
-    <td></td>
-    <th></th>
-    <td></td>
-    <th></th>
-    <td></td>
-    <th></th>
-    <td></td>
   </form>
+  
+     <form class="contact" action="index.html" method="post">
+      <dl>
+        <dt>お名前</dt>
+        <dd><input type="text" name="name" class="name"></dd>
+        <dt>性別</dt>
+        <dd><input type="ragio" name="name" class="name"></dd>
+        <dt>性別<span class="asterisk">※</span></td>
+        <dd><input type="radio" name="gender" value="男" checked="checked"> 男性</dd>
+        <dd><input type="radio" name="gender" value="女"> 女性</dd>
+        <dt>メールアドレス</dt>
+        <dd><input type="email" name="email" class="email"></dd>
+        <dt>郵便番号</dt>
+        <dd><input type="text" name="postcode" pattern="\d{3}-?\d{4}" required></dd>
+        <dt>住所</dt>
+        <dd><input type="text" id="address" name="address"></dd>
+        <dt>建物名</dt>
+        <dd>
+          <input type="text" name="building_name" value="建物名" class="text"></dd>
+        <dt>ご意見</dt>
+        <dd><textarea name="message" class="message"></textarea></dd>
+      </dl>
+      <button type="submit" class="btn">送信</button>
+      <a>修正する</a>
+    </form>
 </body>
 
 </html>
