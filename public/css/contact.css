@@ -5,17 +5,29 @@ h1{
 .asterisk{
   color: red;
 }
+ul{
+  padding-left: 0
+}
+li{
+  margin: 12px 0 32px;
+  list-style: none
+}
 form{
   background-color: #ffffff;
   border-radius: 3px;
   border-color: #6e6b6b;
 }
+.huge{
+  width: 50%;
+}
+
 .formtag{
   padding: 0 auto 0; 
 }
 input{
   color: #6e6b6b;
-  float: right;
+  margin: 12px 0 32px;
+  /* float: right; */
   
 }
 
@@ -31,4 +43,24 @@ border-radius: 4px;
 }
 .label{
   padding-top: 10px;
+}
+
+.flex_box {
+  background-color: #eee;
+  /* 背景色指定 */
+  padding: 10px;
+  /* 余白指定 */
+  display: flex;
+  width: 100%;
+}
+.flex_form-item {
+  padding: 10px;
+}
+.box_left{
+/* width: 20%; */
+background-color: hsl(240, 100%, 80%);
+}
+.box_right{
+  /* width: 80%; */
+  background:hsl(0, 100%, 80%);
 }

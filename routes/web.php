@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ContactController@index')->name('index');
+Route::get('/',[ContactController::class,'index']);
 //確認ページ
-Route::post('/contact/confirm', 'ContactController@confirm')->name('contact.confirm');
+Route::post('/contact/confirm',[ContactController::class, 'contact.confirm']);
 
 //送信完了ページ
 Route::post('/contact/thanks', 'ContactController@send')->name('contact.send');
