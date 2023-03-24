@@ -13,14 +13,30 @@
 <body>
   <h1>お問い合わせ</h1><br>
   <form action="/form.php" method="post">
+    @scrf
+    @method('POST')
     <div class="formtag">
       <table>
         <tr>
           <th><label for="name">お名前<span class="asterisk">※</span></label></th>
-          <td><input type="text" id="name" name="firstname" class="hugename" required></td>
-          <td><input type="text" id="name" name="lastname" class="hugename" required></td>
+          <td>
+            <input type="text" id="name" name="firstname" class="hugename" required>
+            @if($errors->has('firstname'))
+            <p class="required">{{ $errors->first('firstname') }}</p>
+            @endif
+          </td>
+          <td><input type="text" id="name" name="lastname" class="hugename" required>
+            @if($errors->has('lastname'))
+            <p class="required">{{ $errors->first('lastname') }}</p>
+            @endif
+          </td>
         </tr>
         <tr>
+          <div class="element_wrap">
+            <label>性別</label>
+            <label for="gender_male"><input id="gender_male" type="radio" name="gender" value="male">男性</label>
+            <label for="gender_female"><input id="gender_female" type="radio" name="gender" value="female">女性</label>
+          </div>
           <th><label for="gender">性別<span class="asterisk">※</span></label></th>
           <td><input type="radio" name="gender" value="男" checked="checked" style="transform:scale(2.0);"><label for="gender">男性</label></td>
           <td><input type="radio" name="gender" value="女"> 女性</td>
@@ -49,7 +65,7 @@
     </div>
     <button type="submit" name="action" value="submit">確認</button>
   </form>
-  <form class="contact" action="index.html" method="post">
+  <!-- <form class="contact" action="index.html" method="post">
     <dl>
       <dt>お名前</dt>
       <dd><input type="text" name="name" class="name"></dd>
@@ -72,7 +88,7 @@
     </dl>
     <button type="submit" class="btn">送信</button>
 
-  </form>
+  </form> -->
   <!-- <form class="contact" action="index.html" method="post">
     <div class="flex_box">
       <div class="flex_form-item">
@@ -104,6 +120,9 @@
     </div>
   </form> -->
   <button type="submit" class="btn">送信</button>
+
+
+  
 </body>
 
 </html>
