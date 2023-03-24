@@ -5,15 +5,7 @@ h1{
 .※::after{
   color: red;
   content: "※";
-  /* display: inline-block;
-    position: absolute;
-    right: 10px;
-    top: 15px;
-    border: 1px solid #CCC;
-    padding: 0 5px;
-    font-size: 85%;
-    background: #d40000;
-    color: #FFF; */
+  
 }
 ul{
   padding-left: 0
@@ -25,7 +17,6 @@ li{
 form{
   background-color: #ffffff;
   border-radius: 6px;
-  border-color: #6e6b6b;
 }
 .form-inner{
   padding: 0 auto 0; 

@@ -21,7 +21,7 @@
         <table>
           <div class="fullname">
             <tr>
-              <th>
+              <th class="※">
                 <label for="fullname">お名前</label>
               </th>
               <td class="name">
@@ -65,7 +65,7 @@
           </tr>
           <tr>
             <div class="mg-b_40">
-              <th class="required">
+              <th class="※">
                 <label for="postcode">郵便番号</label>
               </th>
               <td class="postcode">
