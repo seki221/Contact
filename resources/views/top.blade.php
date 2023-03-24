@@ -19,25 +19,23 @@
     <div class="form-inner">
       <div class="form-cont">
         <table>
-          <tr>
-            <div class="fullname">
-              <th class="※">
+          <div class="fullname">
+            <tr>
+              <th>
                 <label for="fullname">お名前</label>
               </th>
-              <td>
+              <td class="name">
                 <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}" class="namehuge">
                 @if($errors->has('firstname'))
                 <p class="required">{{ $errors->first('firstname') }}</p>
                 @endif
-              </td>
-              <td>
-                <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}" class="nemehuge">
+                <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}" class="namehuge">
                 @if($errors->has('lastname'))
                 <p class="required">{{ $errors->first('lastname') }}</p>
                 @endif
               </td>
-            </div>
-          </tr>
+            </tr>
+          </div>
           <div class="element_wrap">
             <th class="※">
               <label>性別</label>
@@ -58,7 +56,7 @@
                 <label for="email" class="required-tag lg-label">メールアドレス</label>
               </th>
               <td>
-                <input type="email" id="mail" name="email" class="mg-b_10" value="{{ old('email') }}">
+                <input type="email" id="mail" name="email" class="mg-b_10" value="{{ old('email') }}" class="huge">
                 @if($errors->has('email'))
                 <p class="required">{{ $errors->first('email') }}</p>
                 @endif
@@ -70,7 +68,7 @@
               <th class="required">
                 <label for="postcode">郵便番号</label>
               </th>
-              <td>
+              <td class="postcode">
                 <q><input type="text" id="postcode" name="postcode" value="{{ old('postcode') }}" pattern="\d{3}-?\d{4}" class="huge"></q>
                 @if($errors->has('postcode'))
                 <p class="required">{{ $errors->first('postcode') }}</p>
@@ -81,12 +79,12 @@
           <tr>
             <div class="mg-b_40">
               <th class="※">
-                <label for="postcode">住所</label>
+                <label for="address">住所</label>
               </th>
               <td>
-                <input type="text" id="postcode" name="postcode" value="{{ old('postcode') }}">
-                @if($errors->has('postcode'))
-                <p class="required">{{ $errors->first('postcode') }}</p>
+                <input type="text" id="address" name="address" value="{{ old('address') }}" class="huge">
+                @if($errors->has('address'))
+                <p class="required">{{ $errors->first('address') }}</p>
                 @endif
               </td>
             </div>
@@ -94,12 +92,12 @@
           <tr>
             <div class="mg-b_40">
               <th>
-                <label for="buildname">建物名</label>
+                <label for="building_name">建物名</label>
               </th>
               <td>
-                <input type="text" id="buildname" name="buildname" value="{{ old('buildname') }}">
-                @if($errors->has('postcode'))
-                <p class="required">{{ $errors->first('buildname') }}</p>
+                <input type="text" id="building_name" name="building_name" value="{{ old('building_name') }}" class="huge">
+                @if($errors->has('building_name'))
+                <p class="required">{{ $errors->first('building_name') }}</p>
                 @endif
               </td>
             </div>
@@ -107,19 +105,21 @@
           <tr>
             <div class="mg-b_40">
               <th class="※">
-                <label for="content" class="lg-label">ご意見</label>
+                <label for="opinion" class="lg-label">ご意見</label>
               </th>
               <td>
-                <textarea name="content" id="content" cols="30" rows="10">{{ old('content') }}</textarea>
+                <textarea name="opinion" id="opinion" cols="30" rows="10">{{ old('opinion') }}</textarea>
+                @if($errors->has('opinion'))
+                <p class="required">{{ $errors->first('opinion') }}</p>
+                @endif
               </td>
             </div>
           </tr>
         </table>
         <button type="submit" name="action" value="submit">確認</button>
-
-
       </div>
     </div>
+  </form>
 </body>
 
 </html>

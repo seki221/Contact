@@ -43,32 +43,19 @@ form th{
     vertical-align: top;
     width: 5em;
 }
-form td{
-  padding: 10px;
-}
+
 form input{
   margin: 12px 0 32px;
 }
 .namehuge{
-  width: 35vw;
+  width: 25vw;
+}
+.name{
+  margin: 0 25px;
 }
 .huge {
-  width: 70vw;
+  width: 50vw;
 }
-/* gender_male
-.male{
-    padding-right: 4em;
-    position: relative;
-  }
-.male::after {
-  content: "男性";
-  position: absolute;
-  right: 6px;
-  width: 40px;
-} */
-/* .female::before {
-  content: "女性";
-} */
 
 button{  
 border-radius: 4px;
@@ -82,29 +69,16 @@ margin-right: auto;
 }
 q{
   padding-right: 4em;
-    position: relative;
 }
-q::before {
+.postcode{
+  position: relative;
+}
+q::before{
   content: "〒";
   position: absolute;
   
 }
-.flex_box {
-  background-color: #eee;
-  /* 背景色指定 */
-  padding: 10px;
-  /* 余白指定 */
-  display: flex;
-  width: 100%;
-}
-.flex_form-item {
-  padding: 10px;
-}
-.th_box{
-/* width: 20%; */
-background-color: hsl(240, 100%, 80%);
-}
-.box_right{
-  /* width: 80%; */
-  background:hsl(0, 100%, 80%);
+
+#postcode{
+  margin-left: 30px;
 }
