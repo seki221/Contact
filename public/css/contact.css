@@ -2,8 +2,18 @@ h1{
   text-align:center;
   margin-top: 30px;
 }
-.asterisk{
+.※::after{
   color: red;
+  content: "※";
+  /* display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    border: 1px solid #CCC;
+    padding: 0 5px;
+    font-size: 85%;
+    background: #d40000;
+    color: #FFF; */
 }
 ul{
   padding-left: 0
@@ -17,34 +27,48 @@ form{
   border-radius: 6px;
   border-color: #6e6b6b;
 }
-.formtag{
+.form-inner{
   padding: 0 auto 0; 
   width: 100%;
 }
 
-table{
+form table{
   width: 100%;
 }
-th{
-  padding: 12px 20px 32px;
-  width: 20%;
+form th{
+  padding: 15px;
+  margin: 15px;
+    border-bottom: 1px solid #fff;
+    font-weight: normal;
+    vertical-align: top;
+    width: 5em;
 }
-input{
-  /* margin: 12px 0 32px; */
-  float: right;
-  
+form td{
+  padding: 10px;
 }
-#name{
-  width: 40%;
+form input{
+  margin: 12px 0 32px;
 }
-/* td{
-  width: 80%;
+.namehuge{
+  width: 35vw;
+}
+.huge {
+  width: 70vw;
+}
+/* gender_male
+.male{
+    padding-right: 4em;
+    position: relative;
+  }
+.male::after {
+  content: "男性";
+  position: absolute;
+  right: 6px;
+  width: 40px;
 } */
-
-.huge{
-  width: 50%;
-}
-
+/* .female::before {
+  content: "女性";
+} */
 
 button{  
 border-radius: 4px;
@@ -56,8 +80,14 @@ display: block;
 margin-left: auto;
 margin-right: auto;
 }
+q{
+  padding-right: 4em;
+    position: relative;
+}
 q::before {
   content: "〒";
+  position: absolute;
+  
 }
 .flex_box {
   background-color: #eee;

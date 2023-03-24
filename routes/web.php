@@ -14,9 +14,9 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/',[ContactController::class,'index']);
+Route::get('/',[ContactController::class,'index'])->name('index');
 //確認ページ
-Route::post('/contact/confirm',[ContactController::class, 'contact.confirm']);
-
+Route::get('/confirm', [CotactController::class, 'confirm']);
+Route::post('/confirm', [CotactController::class, 'confirm'])->name('confirm');
 //送信完了ページ
 Route::post('/contact/thanks', 'ContactController@send')->name('contact.send');
