@@ -1,3 +1,17 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (isset($_POST['text'])) {
+    $isset_status = 'POSTED, isset() True';
+    $text_value = $_POST['text'];
+  } else {
+    $isset_status = 'POSTED, isset() False';
+    $text_value = 'Undefined or Null';
+  }
+} else {
+  $isset_status = 'started without POST';
+  $text_value = 'Undefined';
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -5,6 +19,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{asset('/css/riset.css')}}">
+  <link rel="stylesheet" href="{{asset('/css/confirm.css')}}">
   <title>Document</title>
 </head>
 
@@ -13,12 +30,12 @@
   <form method="POST" action="{{ route('send') }}" class="confirm__ar">
     {{ csrf_field() }}
     {{ method_field('POST') }}
-    <dt class="confirm__tag">お名前</dt>
-    <dd>{{ $contacts['firstname'] }}
-      {{ $contacts['lastname'] }}
-    </dd>
-    <input type="hidden" name="fullname" value="{{ $contacts['fullname'] }}">
-    <input type="hidden" name="fullname" value="{{ $contacts['fullname'] }}">
+    <dl>
+      <dt class="confirm__tag">お名前</dt>
+      <dd>{{ $contacts['firstname'] }}{{ $contacts['lastname'] }}
+      </dd>
+      <input type="hidden" name="fullname" value="{{ $contacts['firstname'] }}">
+      <input type="hidden" name="fullname" value="{{ $contacts['lastname'] }}">
 
     </dl>
     <dl>
@@ -34,7 +51,7 @@
     <dl>
       <dt class="confirm__tag">郵便番号</dt>
       <dd>{{ $contacts['postal_code'] }}</dd>
-      <input type="hidden" name="postcode" value="{{ $contacts['postcode'] }}">
+      <input type="hidden" name="postcode" value="{{ $contacts['postal_code'] }}">
     </dl>
     <dl>
       <dt class="confirm__tag">住所</dt>
@@ -49,15 +66,15 @@
     <dl>
       <dt class="confirm__tag">ご意見</dt>
       <dd>
-        {!! nl2br(e($contacts['content'])) !!}
-        <input type="hidden" name="content" value="{{ $contacts['content'] }}">
+        {!! nl2br(e($contacts['opinion'])) !!}
+        <input type="hidden" name="opinion" value="{{ $contacts['opinion'] }}">
       </dd>
     </dl>
     <div class="confirm_bk">
-      <a href="{{ route('index') }}" class="back_btn"><span class="f-bold">戻る</span></a>
-      <input onclick="submit();" type="button" value="送信" class="confirm_btn">
-      <form method="post" action="">
-        修正する</form>
+      <div class="e_a_b">
+        <p><button onclick="submit();" name="action" value="submit">送信</button></p>
+        <p><a href="{{ route('index') }}" class="back_btn"><span class="f-bold">修正する</span></a></p>
+      </div>
     </div>
   </form>
 </body>

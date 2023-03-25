@@ -1,3 +1,20 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (isset($_POST['text'])) {
+    $isset_status = 'POSTED, isset() True';
+    $text_value = $_POST['text'];
+  } else {
+    $isset_status = 'POSTED, isset() False';
+    $text_value = 'firstname';
+  }
+} else {
+  $isset_status = 'started without POST';
+  $text_value = 'firstname';
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -17,7 +34,7 @@
   @if (count($errors) > 0)
   <p>入力に問題があります</p>
   @endif
-  <form method="POST" action="{{ route('conform') }}" class="h-adr" style="float:left;">
+  <form method="POST" action="{{ route('confirm') }}" class="h-adr" style="float:left;">
     @csrf
     @method('POST')
     <div class="form-inner">
@@ -28,7 +45,7 @@
             <tr>
               <th class="lavel_th"><label for="fullname" class="※">お名前</label></th>
               <td class="name">
-                <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}" class="namehuge"><br>
+                <input type="text" id="firstname" name="firstname" value="<?php echo $firstname_value; ?>" class="namehuge"><br>
                 <sp class="under_name">
                   <exmp class="under_form">例)山田</exmp>
                 </sp><br>
@@ -148,6 +165,11 @@
       </div>
     </div>
   </form>
+  <p><?php echo $isset_status; ?></p>
+  <p>
+    text value:<?php echo $first_value; ?>
+    , number value: <?php echo $number_value; ?>
+  </p>
 </body>
 
 </html>
