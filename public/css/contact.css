@@ -11,12 +11,13 @@ ul{
   padding-left: 0
 }
 li{
-  margin: 12px 0 32px;
+  margin: 12px 50px 32px;
   list-style: none
 }
 form{
   background-color: #ffffff;
   border-radius: 6px;
+  
 }
 .form-inner{
   padding: 0 auto 0; 
@@ -27,27 +28,37 @@ form table{
   width: 100%;
 }
 form th{
-  padding: 15px;
-  margin: 15px;
-    border-bottom: 1px solid #fff;
-    font-weight: normal;
-    vertical-align: top;
-    width: 5em;
+  padding: 15px 15px 15px 65px;
+  width: 21%;
+  /* vertical-align: top; */
+  text-align: left;
+  font-size: 20px;
+  /* border-bottom: 1px solid #fff; */
+    /* font-weight: normal; */
+    white-space: nowrap
 }
 
 form input{
-  margin: 12px 0 32px;
+margin: 15px 0 15px;
+height: 24px;
 }
-.namehuge{
-  width: 25vw;
-}
+form #postcode{margin-left: 10px;}
+
+/* .male{margin:16px;} */
+.female{margin:16px;}
 .name{
   margin: 0 25px;
 }
 .huge {
   width: 50vw;
 }
-
+.size-input-email{
+  width: 200px;
+  size:20px 
+}
+.namehuge{
+  width: 25vw;
+}
 button{  
 border-radius: 4px;
 background: #000;
@@ -57,19 +68,5 @@ height: 32px;
 display: block;
 margin-left: auto;
 margin-right: auto;
-}
-q{
-  padding-right: 4em;
-}
-.postcode{
-  position: relative;
-}
-q::before{
-  content: "〒";
-  position: absolute;
-  
-}
-
-#postcode{
-  margin-left: 30px;
+margin-top: 30px;
 }

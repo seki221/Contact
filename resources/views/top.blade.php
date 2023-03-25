@@ -21,11 +21,12 @@
         <table>
           <div class="fullname">
             <tr>
-              <th class="※">
-                <label for="fullname">お名前</label>
+              <th>
+                <label for="fullname" class="※">お名前</label>
               </th>
               <td class="name">
-                <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}" class="namehuge">
+                
+                <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}" class="namehuge" >
                 @if($errors->has('firstname'))
                 <p class="required">{{ $errors->first('firstname') }}</p>
                 @endif
@@ -37,14 +38,15 @@
             </tr>
           </div>
           <div class="element_wrap">
-            <th class="※">
-              <label>性別</label>
+            <th>
+              <label class="※">性別</label>
             </th>
             <td>
-              <label for="gender_male">
-                <m><input id="gender_male" type="radio" name="gender" value="male" checked="checked" class="male" style="transform:scale(1.5);">男性
+              <label for="gender_male" class="male">
+                <input id="gender_male" type="radio" name="gender" value="male" checked="checked" class="male" style="transform:scale(1.5);">
+                男性
               </label>
-              <label for="gender_female">
+              <label for="gender_female" class="female">
                 <input id="gender_female" type="radio" name="gender" value="female" class="female" style="transform:scale(1.5);">女性
               </label>
             </td>
@@ -52,11 +54,11 @@
           </tr>
           <tr>
             <div class="mg-b_40">
-              <th class="※">
-                <label for="email" class="required-tag lg-label">メールアドレス</label>
+              <th>
+                <label for="email" class="※">メールアドレス</label>
               </th>
               <td>
-                <input type="email" id="mail" name="email" class="mg-b_10" value="{{ old('email') }}" class="huge">
+                <input type="email" id="mail" name="email" value="{{ old('email') }}" class="size-input-email">
                 @if($errors->has('email'))
                 <p class="required">{{ $errors->first('email') }}</p>
                 @endif
@@ -65,11 +67,11 @@
           </tr>
           <tr>
             <div class="mg-b_40">
-              <th class="※">
-                <label for="postcode">郵便番号</label>
+              <th>
+                <label for="postcode" class="※">郵便番号</label>
               </th>
-              <td class="postcode">
-                <q><input type="text" id="postcode" name="postcode" value="{{ old('postcode') }}" pattern="\d{3}-?\d{4}" class="huge"></q>
+              <td class=" postcode">
+                〒<input type="text" id="postcode" name="postcode" value="{{ old('postcode') }}" pattern="\d{3}-?\d{4}">
                 @if($errors->has('postcode'))
                 <p class="required">{{ $errors->first('postcode') }}</p>
                 @endif
@@ -104,11 +106,11 @@
           </tr>
           <tr>
             <div class="mg-b_40">
-              <th class="※">
-                <label for="opinion" class="lg-label">ご意見</label>
+              <th>
+                <label for="opinion" class="※">ご意見</label>
               </th>
               <td>
-                <textarea name="opinion" id="opinion" cols="30" rows="10">{{ old('opinion') }}</textarea>
+                <textarea name="opinion" id="opinion" cols="72" rows="4">{{ old('opinion') }}</textarea>
                 @if($errors->has('opinion'))
                 <p class="required">{{ $errors->first('opinion') }}</p>
                 @endif
