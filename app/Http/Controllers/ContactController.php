@@ -3,29 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        return view('top');
+        return view('top', ['txt' => 'フォームを入力']);
     }
 
+
+    public function post(ContactRequest $request)
+    {
+        return view('index', ['txt' => '正しい入力です']);
+    }
     public function confirm(Request $request)
     {
-        $inputs = $request->all();
-        if (!$inputs) {
+        $contacts = $request->all();
+        
+        if (!$contacts) {
             return redirect()->route('top');
         }
         $request->validate([
-            'name' => 'required',
-            'cname' => 'required',
-            'tel' => ['required', 'numeric', 'digits_between:8,11'],
-            'email' => ['required', 'email', 'confirmed'],
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'gender' => 'required',
+            'email' => ['required', 'email'],
+            'address' => ['required', 'address'],
+            'postal_code' => ['required', 'numeric', 'digits_between:8,'],
             'messgae' => 'max:255'
         ]);
         return view('confirm', [
-            'inputs' => $inputs,
+            'contacs' => $contacts,
         ]);
     }
 

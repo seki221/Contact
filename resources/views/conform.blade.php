@@ -1,13 +1,23 @@
-<form method="POST" action="{{ route('send') }}" class="confirm__ar">
-  {{ csrf_field() }}
-  {{ method_field('POST') }}
-  <dt class="confirm__tag">お名前</dt>
-  <dd>{{ $inputs['firstname'] }}
-    {{ $inputs['lastname'] }}
-  </dd>
-  <input type="hidden" name="fullname" value="{{ $inputs['fullname'] }}">
-  <input type="hidden" name="fullname" value="{{ $inputs['fullname'] }}">
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form method="POST" action="{{ route('send') }}" class="confirm__ar">
+    {{ csrf_field() }}
+    {{ method_field('POST') }}
+    <dt class="confirm__tag">お名前</dt>
+    <dd>{{ $inputs['firstname'] }}
+      {{ $inputs['lastname'] }}
+    </dd>
+    <input type="hidden" name="fullname" value="{{ $inputs['fullname'] }}">
+    <input type="hidden" name="fullname" value="{{ $inputs['fullname'] }}">
+    
   </dl>
   <dl>
     <dt class="confirm__tag">性別</dt>
@@ -46,5 +56,7 @@
     <input onclick="submit();" type="button" value="送信" class="confirm_btn">
     <form method="post" action="">
       修正する</form>
-  </div>
-</form>
+    </div>
+  </form>
+</body>
+</html>

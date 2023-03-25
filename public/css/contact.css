@@ -17,7 +17,9 @@ li{
 form{
   background-color: #ffffff;
   border-radius: 6px;
-  
+}
+.error{
+  padding-left: 136px;
 }
 .form-inner{
   padding: 0 auto 0; 
@@ -27,7 +29,7 @@ form{
 form table{
   width: 100%;
 }
-form th{
+form .lavel_th{
   padding: 15px 15px 15px 65px;
   width: 21%;
   /* vertical-align: top; */
