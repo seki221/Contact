@@ -7,52 +7,46 @@ h1{
   content: "※";
   
 }
-ul{
-  padding-left: 0
-}
-li{
-  margin: 12px 50px 32px;
-  list-style: none
-}
-.fullname{
-  display: flex;
-}
+.p-postal-code{margin-left: 18px;}
+
 form{
-  background-color: #ffffff;
   border-radius: 6px;
 }
+form tr{
+  /* display: flex; */
+  width: 100%;
+}
+  form .lavel_th{
+    padding: 0px 15px 15px 65px;
+    min-width: 28%;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 20px;
+    vertical-align: top;
+    /* border-bottom: 1px solid #fff; */
+    /* font-weight: normal; */
+  }
+    form tr td {
+      width: 165px;
+      padding-bottom: 16px;
+      width: 50%;
+      float: left;
+      clear: both;
+    }
 .under_name {
   padding-right: 25px;
 }
-.error{padding-left: 30px;
+.error{
+  /* padding-left: 30px; */
   margin-top: 12px;
+  white-space: nowrap
 }
 .form-inner{
   padding: 0 auto 0; 
   width: 100%;
 }
 
-form table{
-  width: 100%;
-  display: table;
-}
-.table-row{
-  display: table-row;
-}
-.table-cell {
-	display:table-cell;
-  border: 1px solid;
-  }
-form .lavel_th{
-  padding: 15px 15px 15px 65px;
-  width: 21%;
-  /* vertical-align: top; */
-  text-align: left;
-  font-size: 20px;
-  /* border-bottom: 1px solid #fff; */
-  /* font-weight: normal; */
-  white-space: nowrap
-}
+
 form .lavel_opinion {
   padding: 0 15px 15px 65px;
   width: 21%;
@@ -71,6 +65,7 @@ form input{
 .under_form{
   color: #b9b9bc;
   /* margin: 0 10px */
+  white-space: nowrap
 }
 
 p{margin-top: 16px;}
@@ -78,9 +73,9 @@ p{margin-top: 16px;}
 form #postcode{margin-left: 10px;}
 
 /* .male{margin:16px;} */
-.female{margin:16px;}
+.female{margin:0 16px;}
 .name{
-  margin: 0 25px;
+  /* margin: 0 25px; */
 }
 .huge {
   width: 50vw;

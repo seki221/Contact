@@ -26,7 +26,7 @@ class ContactSendMail extends Mailable
         $this->firstname  = $contacts['name'];
         $this->lastname  = $contacts['lastname'];
         $this->gender  = $contacts['gender'];
-        $this->email = $contacts['email'];
+        $this->email = $contacts['mail'];
         $this->address = $contacts['address'];
         $this->address = $contacts['postal_code'];
         $this->opinion = $contacts['opinion'];

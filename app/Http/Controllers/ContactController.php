@@ -12,6 +12,7 @@ class ContactController extends Controller
     public function index()
     {
         return view('top', ['txt' => 'フォームを入力']);
+    dd('top');
     }
 
 
@@ -39,16 +40,20 @@ class ContactController extends Controller
             'contacts' => $contacts,
         ]);
     }
-
     public function send(Request $request)
-    {
-        $contacts = $request->all();
-        if(!$contacts){
-            return redirect()->route('index');
-        }
-        \Mail::to($contacts['email'])->send(new ContactSendMail($contacts);
-        $request->session()->regenerateToken(); //2回メール送信を防ぐため
-        return view('thanks');
+    {return view('thanks');
     }
+
+
+    // public function send(Request $request)
+    // {
+    //     $contacts = $request->all();
+    //     if(!$contacts){
+    //         return redirect()->route('index');
+    //     }
+    //     \Mail::to($input['mail'])->send(new ContactSendMail($input);
+    //     $request->session()->regenerateToken(); //2回メール送信を防ぐため
+    //     return view('thanks');
+    // }
     
 }

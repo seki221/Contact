@@ -26,6 +26,6 @@
     {{ csrf_field() }}
     {{ method_field('POST') }}
     <button type="button" name="action" value="submit">トップページへ</button>
-    <a href="{{ route('index') }}" class="back_btn">修正する</a>
+    <a href="{{ route('/index') }}" class="back_btn">修正する</a>
   </form>
 </div>
