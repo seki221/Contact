@@ -14,43 +14,43 @@
     {{ csrf_field() }}
     {{ method_field('POST') }}
     <dt class="confirm__tag">お名前</dt>
-    <dd>{{ $inputs['firstname'] }}
-      {{ $inputs['lastname'] }}
+    <dd>{{ $contacts['firstname'] }}
+      {{ $contacts['lastname'] }}
     </dd>
-    <input type="hidden" name="fullname" value="{{ $inputs['fullname'] }}">
-    <input type="hidden" name="fullname" value="{{ $inputs['fullname'] }}">
+    <input type="hidden" name="fullname" value="{{ $contacts['fullname'] }}">
+    <input type="hidden" name="fullname" value="{{ $contacts['fullname'] }}">
 
     </dl>
     <dl>
       <dt class="confirm__tag">性別</dt>
-      <dd>{{ $inputs['gender'] }}</dd>
-      <input type="hidden" name="gender" value="{{ $inputs['gender'] }}">
+      <dd>{{ $contacts['gender'] }}</dd>
+      <input type="hidden" name="gender" value="{{ $contacts['gender'] }}">
     </dl>
     <dl>
       <dt class="confirm__tag">メールアドレス</dt>
-      <dd>{{ $inputs['email'] }}</dd>
-      <input type="hidden" name="email" value="{{ $inputs['email'] }}">
+      <dd>{{ $contacts['email'] }}</dd>
+      <input type="hidden" name="email" value="{{ $contacts['email'] }}">
     </dl>
     <dl>
       <dt class="confirm__tag">郵便番号</dt>
-      <dd>{{ $inputs['postal_code'] }}</dd>
-      <input type="hidden" name="postcode" value="{{ $inputs['postcode'] }}">
+      <dd>{{ $contacts['postal_code'] }}</dd>
+      <input type="hidden" name="postcode" value="{{ $contacts['postcode'] }}">
     </dl>
     <dl>
       <dt class="confirm__tag">住所</dt>
-      <dd>{{ $inputs['address'] }}</dd>
-      <input type="hidden" name="address" value="{{ $inputs['address'] }}">
+      <dd>{{ $contacts['address'] }}</dd>
+      <input type="hidden" name="address" value="{{ $contacts['address'] }}">
     </dl>
     <dl>
       <dt class="confirm__tag">建物名</dt>
-      <dd>{{ $inputs['building_name'] }}</dd>
-      <input type="hidden" name="building_name" value="{{ $inputs['building_name'] }}">
+      <dd>{{ $contacts['building_name'] }}</dd>
+      <input type="hidden" name="building_name" value="{{ $contacts['building_name'] }}">
     </dl>
     <dl>
       <dt class="confirm__tag">ご意見</dt>
       <dd>
-        {!! nl2br(e($inputs['content'])) !!}
-        <input type="hidden" name="content" value="{{ $inputs['content'] }}">
+        {!! nl2br(e($contacts['content'])) !!}
+        <input type="hidden" name="content" value="{{ $contacts['content'] }}">
       </dd>
     </dl>
     <div class="confirm_bk">
