@@ -14,12 +14,19 @@ li{
   margin: 12px 50px 32px;
   list-style: none
 }
+.fullname{
+  display: flex;
+
+}
 form{
   background-color: #ffffff;
   border-radius: 6px;
 }
-.error{
-  padding-left: 136px;
+.under_name {
+  padding-right: 25px;
+}
+.error{padding-left: 30px;
+  margin-top: 12px;
 }
 .form-inner{
   padding: 0 auto 0; 
@@ -28,7 +35,15 @@ form{
 
 form table{
   width: 100%;
+  display: table;
 }
+.table-row{
+  display: table-row;
+}
+.table-cell {
+	display:table-cell;
+  border: 1px solid;
+  }
 form .lavel_th{
   padding: 15px 15px 15px 65px;
   width: 21%;
@@ -36,14 +51,31 @@ form .lavel_th{
   text-align: left;
   font-size: 20px;
   /* border-bottom: 1px solid #fff; */
-    /* font-weight: normal; */
-    white-space: nowrap
+  /* font-weight: normal; */
+  white-space: nowrap
+}
+form .lavel_opinion {
+  padding: 0 15px 15px 65px;
+  width: 21%;
+  vertical-align: top;
+  text-align: left;
+  font-size: 20px;
+  /* border-bottom: 1px solid #fff; */
+  /* font-weight: normal; */
+  white-space: nowrap
 }
 
 form input{
-margin: 15px 0 15px;
-height: 24px;
+  /* margin: 15px 0; */
+  height: 24px;
 }
+.under_form{
+  color: #b9b9bc;
+  /* margin: 0 10px */
+}
+
+p{margin-top: 16px;}
+.opinion{margin-top: 16px;}
 form #postcode{margin-left: 10px;}
 
 /* .male{margin:16px;} */
