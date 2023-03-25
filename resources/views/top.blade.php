@@ -15,8 +15,9 @@
   <h1>お問い合わせ</h1><br>
   <p>{{$txt}}</p>
   @if (count($errors) > 0)
+  <p>入力に問題があります</p>
   @endif
-  <form method="POST" action="{{ route('confirm') }}" class="h-adr" style="float:left;">
+  <form method="POST" action="{{ route('conform') }}" class="h-adr" style="float:left;">
     @csrf
     @method('POST')
     <div class="form-inner">
@@ -36,11 +37,11 @@
                 @enderror
               </td>
               <td>
-                  <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}" class="namehuge"><br>
-                  <sp class="under_name">
-                    <exmp class="under_form">例)太郎</exmp>
-                  </sp><br>
-                  <sp class="error">@error('lastname')
+                <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}" class="namehuge"><br>
+                <sp class="under_name">
+                  <exmp class="under_form">例)太郎</exmp>
+                </sp><br>
+                <sp class="error">@error('lastname')
                   {{$message}}
                   @enderror
                 </sp>

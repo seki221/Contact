@@ -13,7 +13,11 @@ class ContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+    if ($this->path() == '/') {
+      return true;
+    } else {
+      return false;
+    }
     }
 
     /**
@@ -24,10 +28,11 @@ class ContactRequest extends FormRequest
     public function rules()
     {
     return [
-    'name' => 'required',
+    'firstname' => 'required|string',
+    'lastname' => 'required|string',
     'gender' => 'required',
     'email' => 'required|email:rfc,dns',
-    'postal_code'=>'required|nam',
+    'postal_code'=>'required|nameric-dash',
     'address' => 'required|string',
     'opinion' => 'required|string|max:120',
     ];
@@ -40,7 +45,9 @@ class ContactRequest extends FormRequest
     'lastname.required' => '名前を入力してください',
     'email.required' => 'メールアドレスを入力してください',
     'email.email' => 'メールアドレスの形式で入力してください',
-    
+    'postal_code'=>'ハイホンを含む数字のみで入力して下さい',
+    'address'=>'正しい住所を入力してください',
+    'opinion'=>'120以内で入力して下さい',
     ];
   }
 }

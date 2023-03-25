@@ -15,9 +15,9 @@ class ContactController extends Controller
 
     public function post(ContactRequest $request)
     {
-        return view('index', ['txt' => '正しい入力です']);
+        return view('top', ['txt' => '正しい入力です']);
     }
-    public function confirm(Request $request)
+    public function conform(Request $request)
     {
         $contacts = $request->all();
         
@@ -29,12 +29,12 @@ class ContactController extends Controller
             'lastname' => 'required',
             'gender' => 'required',
             'email' => ['required', 'email'],
-            'address' => ['required', 'address'],
-            'postal_code' => ['required', 'numeric', 'digits_between:8,'],
+            'address' => ['required', 'string'],
+            'postal_code' => ['required', 'between:7,8'],
             'messgae' => 'max:255'
         ]);
-        return view('confirm', [
-            'contacs' => $contacts,
+        return view('conform', [
+            'contacts' => $contacts,
         ]);
     }
 
@@ -44,4 +44,5 @@ class ContactController extends Controller
         
         return view('thanks');
     }
+    
 }
