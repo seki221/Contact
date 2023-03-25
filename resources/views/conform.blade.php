@@ -2,8 +2,12 @@
   {{ csrf_field() }}
   {{ method_field('POST') }}
   <dt class="confirm__tag">お名前</dt>
-  <dd>{{ $inputs['name'] }}</dd>
+  <dd>{{ $inputs['firstname'] }}
+    {{ $inputs['lastname'] }}
+  </dd>
   <input type="hidden" name="fullname" value="{{ $inputs['fullname'] }}">
+  <input type="hidden" name="fullname" value="{{ $inputs['fullname'] }}">
+
   </dl>
   <dl>
     <dt class="confirm__tag">性別</dt>
@@ -40,6 +44,7 @@
   <div class="confirm_bk">
     <a href="{{ route('index') }}" class="back_btn"><span class="f-bold">戻る</span></a>
     <input onclick="submit();" type="button" value="送信" class="confirm_btn">
-    <input type="修正する">
+    <form method="post" action="">
+      修正する</form>
   </div>
 </form>

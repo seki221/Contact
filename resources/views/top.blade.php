@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
   <link rel="stylesheet" href="{{asset('/css/reset.css')}}">
   <link rel="stylesheet" href="{{asset('/css/contact.css')}}">
   <title>Document</title>
@@ -25,8 +25,8 @@
                 <label for="fullname" class="※">お名前</label>
               </th>
               <td class="name">
-                
-                <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}" class="namehuge" >
+
+                <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}" class="namehuge">
                 @if($errors->has('firstname'))
                 <p class="required">{{ $errors->first('firstname') }}</p>
                 @endif
@@ -71,7 +71,7 @@
                 <label for="postcode" class="※">郵便番号</label>
               </th>
               <td class=" postcode">
-                〒<input type="text" id="postcode" name="postcode" value="{{ old('postcode') }}" pattern="\d{3}-?\d{4}">
+                〒<input type="text" name="postcode"  maxlength="8" id="postcode" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" value="{{ old('postcode') }}" pattern="\d{3}-\d{4}">
                 @if($errors->has('postcode'))
                 <p class="required">{{ $errors->first('postcode') }}</p>
                 @endif

@@ -15,14 +15,14 @@ class ContactController extends Controller
     {
         $inputs = $request->all();
         if (!$inputs) {
-            return redirect()->route('index');
+            return redirect()->route('top');
         }
         $request->validate([
             'name' => 'required',
             'cname' => 'required',
             'tel' => ['required', 'numeric', 'digits_between:8,11'],
             'email' => ['required', 'email', 'confirmed'],
-            'messgae' => 'max:4000'
+            'messgae' => 'max:255'
         ]);
         return view('confirm', [
             'inputs' => $inputs,
@@ -31,5 +31,8 @@ class ContactController extends Controller
 
     public function send(Request $request)
     {
+        $inputs = $request->all();
+        
+        return view('thanks');
     }
 }
