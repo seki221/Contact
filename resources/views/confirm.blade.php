@@ -36,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </dd>
       <input type="hidden" name="fullname" value="{{ $contacts['firstname'] }}">
       <input type="hidden" name="fullname" value="{{ $contacts['lastname'] }}">
-
     </dl>
     <dl>
       <dt class="confirm__tag">性別</dt>

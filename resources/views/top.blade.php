@@ -1,3 +1,34 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+
+@seki221
+seki221
+/
+Contact
+Public
+Cannot fork because you own this repository and are not a member of any organizations.
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Contact/resources/views/top.blade.php
+@seki221
+seki221 変更
+Latest commit cbbb219 7 hours ago
+History
+1 contributor
+161 lines (156 sloc) 6.09 KB
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -9,17 +40,15 @@
   <link rel="stylesheet" href="{{asset('/css/reset.css')}}">
   <link rel="stylesheet" href="{{asset('/css/contact.css')}}">
   <title>Document</title>
-
-
 </head>
 
 <body>
   <h1>お問い合わせ</h1><br>
   <!-- <p>{{$txt}}</p> -->
   @if (count($errors) > 0)
-  <!-- <p>入力に問題があります</p> -->
+  <p>入力に問題があります</p>
   @endif
-  <form method="POST" action="{{ route('confirm') }}" class="h-adr">
+  <form method="POST" action="{{ route('confirm') }}" class="h-adr" style="float:left;">
     @csrf
     @method('POST')
     <div class="form-inner">
@@ -28,29 +57,27 @@
           <!-- 名前 -->
           <div class="fullname">
             <tr class="fullname">
-              <div class="firstname">
-                <th class="lavel_th"><label for="fullname" class="※">お名前</label></th>
-                <td class="name">
-                  <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}" class="namehuge"><br>
-                  <sp class="under_name">
-                    <exmp class="under_form">例)山田</exmp>
-                  </sp><br>
-                  <sp class="error">@error('firstname')</sp>
+              <th class="lavel_th"><label for="fullname" class="※">お名前</label></th>
+              <td class="name">
+                <input type="text" id="firstname" name="firstname" value="{{ old('email') }}" class="namehuge"><br>
+                <sp class="under_name">
+                  <exmp class="under_form">例)山田</exmp>
+                </sp><br>
+                <sp class="error">@error('firstname')
                   {{$message}}
                   @enderror
-
-                <td>
-                  <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}" class="namehuge"><br>
-                  <sp class="under_name">
-                    <exmp class="under_form">例)太郎</exmp>
-                  </sp><br>
-                  <sp class="error">
-                    @error('lastname')
-                    {{$message}}
-                    @enderror
-                  </sp>
-                </td>
-              </div>
+                </sp>
+              </td>
+              <td>
+                <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}" class="namehuge"><br>
+                <sp class="under_name">
+                  <exmp class="under_form">例)太郎</exmp>
+                </sp><br>
+                <sp class="error">@error('lastname')
+                  {{$message}}
+                  @enderror
+                </sp>
+              </td>
             </tr>
           </div>
           <!-- 性別 -->
@@ -82,7 +109,7 @@
                 <label for="email" class="※">メールアドレス</label>
               </th>
               <td>
-                <input type="email" id="mail" name="email" value="{{ old('email') }}" class="huge"><br>
+                <input type="email" id="mail" name="email" value="{{ old('email') }}" class="size-input-email"><br>
                 <exmp class="under_form">例)test@example.com</exmp><br>
                 <sp class="under_name">
                   @error('email')
@@ -99,18 +126,11 @@
                 <label for="postal_code" class="※">郵便番号</label>
               </th>
               <td class=" postal_code">
-                <input type="hidden" name="bar" id="bar" value="" />
-                〒<input type="text"　name="postcode" class="p-postal-code" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" value="{{ old('postcode') }}" pattern="\d{3}-?\d{4}">
-                
-                <br>
-
-                <exmp class="under_form">例)123-4567</exmp><br>
-                <sp class="under_name">
-                  @error('postcode')
-                  {{$message}}
-                  @enderror
-
-                </sp>
+                〒<input type="text" name="postal_code" class="p-postal-code" maxlength="8" id="postcode" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" value="{{ old('postcode') }}" pattern="\d{3}-\d{4}"><br>
+                <exmp class="under_form">例)123-4567</exmp>
+                @if($errors->has('postcode'))
+                <p class="required">{{ $errors->first('postcode') }}</p>
+                @endif
               </td>
             </tr>
           </div>
@@ -122,11 +142,11 @@
               </th>
               <td>
                 <input type="text" id="address" name="address" value="{{ old('address') }}" class="huge p-region p-locality p-street-address p-extended-address"><br>
-                <exmp class="under_form">例)東京都渋谷区千駄ヶ谷1-2-3</exmp><br>
+                <exmp class="under_form">例)東京都渋谷区千駄ヶ谷1-2-3</exmp>
                 <sp class="ero">
-                  @error('address')
-                  {{$message}}
-                  @enderror
+                  @if($errors->has('address'))
+                  <p class=" required">{{ $errors->first('address') }}</p>
+                  @endif
                 </sp>
               </td>
             </tr>
@@ -141,22 +161,23 @@
               <td>
                 <input type="text" id="building_name" name="building_name" value="{{ old('building_name') }}" class="huge"><br>
                 <exmp class="under_form">例)千駄ヶ谷マンション101</exmp>
+                @if($errors->has('building_name'))
+                <p class="required">{{ $errors->first('building_name') }}</p>
+                @endif
               </td>
             </tr>
           </div>
           <!-- ご意見 -->
           <div class="mg-b_40">
             <tr>
-              <th class="lavel_th">
+              <th class="lavel_opinion">
                 <label for="opinion" class="※">ご意見</label>
               </th>
               <td>
                 <textarea name="opinion" id="opinion" cols="72" rows="4" class="opinion">{{ old('opinion') }}</textarea>
-                <sp class="ero">
-                  @error('opinion')
-                  {{$message}}
-                  @enderror
-                </sp>
+                @if($errors->has('opinion'))
+                <p class="required">{{ $errors->first('opinion') }}</p>
+                @endif
               </td>
             </tr>
           </div>
@@ -169,3 +190,18 @@
 </body>
 
 </html>
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Contact/top.blade.php at cbbb219fc1d5bc387a0e9269bf005990bf0ee470 · seki221/Contact
