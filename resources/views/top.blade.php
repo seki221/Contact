@@ -100,9 +100,8 @@
               </th>
               <td class=" postal_code">
                 <input type="hidden" name="bar" id="bar" value="" />
-                〒<input type="text"　name="postcode" class="p-postal-code" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" value="{{ old('postcode') }}" pattern="\d{3}-\d{4}">
-                <script src="/resources/js/zen2han.js">
-                </script>
+                〒<input type="text"　name="postcode" class="p-postal-code" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" value="{{ old('postcode') }}" pattern="\d{3}-?\d{4}">
+                
                 <br>
 
                 <exmp class="under_form">例)123-4567</exmp><br>
