@@ -31,10 +31,10 @@ class ContactController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'gender' => 'required',
-            'email' => ['required', 'email'],
+            'email' => ['required', ],
             'address' => ['required', 'string'],
-            'postal_code' => ['required', 'between:7,8'],
-            'messgae' => 'max:255'
+            'postcode' => ['required', 'between:7,8'],
+            'opinion' =>['required', 'string', 'max:255'],
         ]);
         return view('confirm', [
             'contacts' => $contacts,

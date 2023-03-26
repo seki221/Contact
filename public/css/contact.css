@@ -12,11 +12,15 @@ h1{
 form{
   border-radius: 6px;
 }
-form tr{
-  /* display: flex; */
+/* .fullname{
   width: 100%;
+} */
+form tr {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
 }
-  form .lavel_th{
+form .lavel_th{
     padding: 0px 15px 15px 65px;
     min-width: 28%;
     white-space: nowrap;
@@ -26,13 +30,16 @@ form tr{
     /* border-bottom: 1px solid #fff; */
     /* font-weight: normal; */
   }
-    form tr td {
+
+    
+form tr td {
       width: 165px;
       padding-bottom: 16px;
       width: 50%;
       float: left;
       clear: both;
-    }
+  }
+
 .under_name {
   padding-right: 25px;
 }
@@ -45,21 +52,15 @@ form tr{
   padding: 0 auto 0; 
   width: 100%;
 }
-
-
-form .lavel_opinion {
-  padding: 0 15px 15px 65px;
-  width: 21%;
-  vertical-align: top;
-  text-align: left;
-  font-size: 20px;
-  /* border-bottom: 1px solid #fff; */
-  /* font-weight: normal; */
-  white-space: nowrap
+form .firstname{
+  float: left;
+}
+form .lastname{
+  float: right;
 }
 
 form input{
-  /* margin: 15px 0; */
+  margin: 0 20px 0 0;
   height: 24px;
 }
 .under_form{
@@ -70,22 +71,22 @@ form input{
 
 p{margin-top: 16px;}
 .opinion{margin-top: 16px;}
-form #postcode{margin-left: 10px;}
+form #postcode{margin-left: 10px;
+}
+.posthuge{
+  width: 125px;
+}
 
 /* .male{margin:16px;} */
 .female{margin:0 16px;}
-.name{
-  /* margin: 0 25px; */
-}
+/* .name{
+  margin: 0 25px;
+} */
 .huge {
   width: 50vw;
 }
-.size-input-email{
-  width: 200px;
-  size:20px 
-}
 .namehuge{
-  width: 25vw;
+  width: 23vw;
 }
 button{  
 border-radius: 4px;
@@ -94,7 +95,9 @@ color: #ffffff;
 width: 135px;
 height: 32px;
 display: block;
-margin-left: auto;
+/* margin-left: auto;
 margin-right: auto;
-margin-top: 30px;
+margin-top: 20px;
+margin-bottom: 50px; */
+margin: 20px auto 50px auto;
 }

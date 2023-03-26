@@ -9,15 +9,17 @@
   <link rel="stylesheet" href="{{asset('/css/reset.css')}}">
   <link rel="stylesheet" href="{{asset('/css/contact.css')}}">
   <title>Document</title>
+
+
 </head>
 
 <body>
   <h1>お問い合わせ</h1><br>
   <!-- <p>{{$txt}}</p> -->
   @if (count($errors) > 0)
-  <p>入力に問題があります</p>
+  <!-- <p>入力に問題があります</p> -->
   @endif
-  <form method="POST" action="{{ route('confirm') }}" class="h-adr" style="float:left;">
+  <form method="POST" action="{{ route('confirm') }}" class="h-adr">
     @csrf
     @method('POST')
     <div class="form-inner">
@@ -26,27 +28,29 @@
           <!-- 名前 -->
           <div class="fullname">
             <tr class="fullname">
-              <th class="lavel_th"><label for="fullname" class="※">お名前</label></th>
-              <td class="name">
-                <input type="text" id="firstname" name="firstname" value="{{ old('email') }}" class="namehuge"><br>
-                <sp class="under_name">
-                  <exmp class="under_form">例)山田</exmp>
-                </sp><br>
-                <sp class="error">@error('firstname')
+              <div class="firstname">
+                <th class="lavel_th"><label for="fullname" class="※">お名前</label></th>
+                <td class="name">
+                  <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}" class="namehuge"><br>
+                  <sp class="under_name">
+                    <exmp class="under_form">例)山田</exmp>
+                  </sp><br>
+                  <sp class="error">@error('firstname')</sp>
                   {{$message}}
                   @enderror
-                </sp>
-              </td>
-              <td>
-                <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}" class="namehuge"><br>
-                <sp class="under_name">
-                  <exmp class="under_form">例)太郎</exmp>
-                </sp><br>
-                <sp class="error">@error('lastname')
-                  {{$message}}
-                  @enderror
-                </sp>
-              </td>
+
+                <td>
+                  <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}" class="namehuge"><br>
+                  <sp class="under_name">
+                    <exmp class="under_form">例)太郎</exmp>
+                  </sp><br>
+                  <sp class="error">
+                    @error('lastname')
+                    {{$message}}
+                    @enderror
+                  </sp>
+                </td>
+              </div>
             </tr>
           </div>
           <!-- 性別 -->
@@ -78,7 +82,7 @@
                 <label for="email" class="※">メールアドレス</label>
               </th>
               <td>
-                <input type="email" id="mail" name="email" value="{{ old('email') }}" class="size-input-email"><br>
+                <input type="email" id="mail" name="email" value="{{ old('email') }}" class="huge"><br>
                 <exmp class="under_form">例)test@example.com</exmp><br>
                 <sp class="under_name">
                   @error('email')
@@ -95,11 +99,19 @@
                 <label for="postal_code" class="※">郵便番号</label>
               </th>
               <td class=" postal_code">
-                〒<input type="text" name="postal_code" class="p-postal-code" maxlength="8" id="postcode" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" value="{{ old('postcode') }}" pattern="\d{3}-\d{4}"><br>
-                <exmp class="under_form">例)123-4567</exmp>
-                @if($errors->has('postcode'))
-                <p class="required">{{ $errors->first('postcode') }}</p>
-                @endif
+                <input type="hidden" name="bar" id="bar" value="" />
+                〒<input type="text"　name="postcode" class="p-postal-code" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" value="{{ old('postcode') }}" pattern="\d{3}-\d{4}">
+                <script src="/resources/js/zen2han.js">
+                </script>
+                <br>
+
+                <exmp class="under_form">例)123-4567</exmp><br>
+                <sp class="under_name">
+                  @error('postcode')
+                  {{$message}}
+                  @enderror
+
+                </sp>
               </td>
             </tr>
           </div>
@@ -111,11 +123,11 @@
               </th>
               <td>
                 <input type="text" id="address" name="address" value="{{ old('address') }}" class="huge p-region p-locality p-street-address p-extended-address"><br>
-                <exmp class="under_form">例)東京都渋谷区千駄ヶ谷1-2-3</exmp>
+                <exmp class="under_form">例)東京都渋谷区千駄ヶ谷1-2-3</exmp><br>
                 <sp class="ero">
-                  @if($errors->has('address'))
-                  <p class=" required">{{ $errors->first('address') }}</p>
-                  @endif
+                  @error('address')
+                  {{$message}}
+                  @enderror
                 </sp>
               </td>
             </tr>
@@ -130,23 +142,22 @@
               <td>
                 <input type="text" id="building_name" name="building_name" value="{{ old('building_name') }}" class="huge"><br>
                 <exmp class="under_form">例)千駄ヶ谷マンション101</exmp>
-                @if($errors->has('building_name'))
-                <p class="required">{{ $errors->first('building_name') }}</p>
-                @endif
               </td>
             </tr>
           </div>
           <!-- ご意見 -->
           <div class="mg-b_40">
             <tr>
-              <th class="lavel_opinion">
+              <th class="lavel_th">
                 <label for="opinion" class="※">ご意見</label>
               </th>
               <td>
                 <textarea name="opinion" id="opinion" cols="72" rows="4" class="opinion">{{ old('opinion') }}</textarea>
-                @if($errors->has('opinion'))
-                <p class="required">{{ $errors->first('opinion') }}</p>
-                @endif
+                <sp class="ero">
+                  @error('opinion')
+                  {{$message}}
+                  @enderror
+                </sp>
               </td>
             </tr>
           </div>

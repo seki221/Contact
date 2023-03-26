@@ -15,6 +15,8 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/',[ContactController::class,'index'])->name('index');
+Route::get('/validation', [ContactController::class, 'index']);
+Route::post('/validation',[ContactController::class, 'index']);
 
 Route::get('/confirm', [CotactController::class, 'confirm']);
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
