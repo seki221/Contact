@@ -17,16 +17,16 @@ use App\Http\Controllers\ContactController;
 Route::get('/',[ContactController::class,'index'])->name('index');
 Route::get('/validation', [ContactController::class, 'index']);
 Route::post('/validation',[ContactController::class, 'index']);
+Route::get('/Management/main', [ContactController::class, 'main'])->name('Management.main');
 
-Route::get('/confirm', [CotactController::class, 'confirm']);
+Route::get('/confirm', [ContactController::class, 'confirm']);
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 
-Route::get('/thanks', [CotactController::class, 'send']);
+Route::get('/thanks', [ContactController::class, 'send']);
 Route::post('/thanks', [ContactController::class, 'send'])->name('send');
-Route::post('/todo/create', [CotactController::class, 'create'])->name('Management.create');
+Route::post('/todo/create', [ContactController::class, 'create'])->name('Management.create');
 
-Route::get('/Management/main', [CotactController::class, 'main'])->name('Management.main');
-Route::get('/find', [CotactController::class, 'find']);
-Route::post('/find', [CotactController::class, 'search']);
+Route::get('/find', [ContactController::class, 'find']);
+Route::post('/find', [ContactController::class, 'search']);
 
-Route::post('/Management/delete', [CotactController::class, 'delete'])->name('Managemant.delete');
+Route::post('/Management/delete', [ContactController::class, 'delete'])->name('Managemant.delete');

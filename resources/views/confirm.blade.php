@@ -40,13 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </dl>
     <dl>
       <dt class="confirm__tag">性別</dt>
-      <dd>{{ $contacts['gender'] }}</dd>
-      <input type="hidden" name="gender" value="{{ $contacts['gender'] }}">
+      <dd>{{ $inputs['gender'] }}</dd>
+      <input type="hidden" name="gender" value="{{ $inputs['gender'] }}">
     </dl>
     <dl>
       <dt class="confirm__tag">メールアドレス</dt>
-      <dd>{{ $contacts['email'] }}</dd>
-      <input type="hidden" name="email" value="{{ $contacts['email'] }}">
+      <dd>{{ $inputs['email'] }}</dd>
+      <input type="hidden" name="email" value="{{ $inputs['email'] }}">
     </dl>
 
     <dl>

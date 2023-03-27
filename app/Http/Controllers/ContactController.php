@@ -15,6 +15,7 @@ class ContactController extends Controller
         return view('top', ['txt' => 'フォームを入力']);
     
     }
+    
 
 
     public function post(ContactRequest $request)

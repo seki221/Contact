@@ -11,7 +11,7 @@ class Contact extends Model
 {
     use HasFactory;
     protected $fillable = ['id', 'firstname','lastname', 'gender','mail','address','building_name','opinion','created_at', 'update_at'];
-    protected $table = 'contents';
+    protected $table = 'contacts';
     /**
      * 一覧画面表示用にcontactsテーブルから全てのデータを取得
      */
@@ -35,7 +35,7 @@ class Contact extends Model
     {
         // リクエストデータを基に管理マスターユーザーに登録する
         return $this->create([
-            'content' => $request->content,
+            'contacts' => $request->content,
         ]);
     }
 
@@ -45,7 +45,7 @@ class Contact extends Model
     public function updateContact($request, $book)
     {
         $result = $book->fill([
-            'content' => $request->content
+            'contacts' => $request->content
         ])->save();
 
         return $result;
