@@ -1,5 +1,16 @@
-.card {
-  width: 50vw;
+.title mb-15{
+  margin-bottom: 15px;
+}
+main {
+  background-color: #eee;
+  /* 背景色指定 */
+  height: 330px;
+  /* 高さ指定 */
+}
+title mb-15
+.container {
+  display: block;
+  width: 80vw;
   background-color: white;
   padding: 30px;
   position: absolute;
@@ -7,6 +18,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
+  border: #000;
 }
 
 body {

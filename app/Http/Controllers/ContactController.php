@@ -45,8 +45,20 @@ class ContactController extends Controller
     public function send(Request $request)
     {return view('thanks');
     }
+    public function find()
+    {
+        return view('find', ['input' => '']);
+    }
 
-
+    public function search(Request $request)
+    {
+        $contact = Contact::find($request->input);
+        $param = [
+            'contact' => $contact,
+            'input' => $request->input
+        ];
+        return view('find', $param);
+    }
     // public function send(Request $request)
     // {
     //     $contacts = $request->all();

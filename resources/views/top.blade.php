@@ -155,11 +155,6 @@
       </div>
     </div>
   </form>
-  <form action=" {{ route('Management.main') }}" method="main">
-    @csrf
-    @method('get')
-    <button type="submit" name="action">idou</button>
-  </form>
 
 </body>
 

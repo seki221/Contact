@@ -7,12 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{asset('/css/riset.css')}}">
   <link rel="stylesheet" href="{{asset('/css/manage.css')}}">
+  
   <title>COACHTECH</title>
 
 </head>
 
 <body>
-  <div class="container">
+  <main>
+  <div class="title mb-15">
     <div class="card">
 
       <p class="title mb-15">管理システム</p>
@@ -23,8 +25,8 @@
         @endforeach
       </ul>
       @endif
-      <div class="todo">
-        <form action="/todo/create" method="post" class="flex between mb-30">
+      <div class="container">
+        <form action="/Management/find" method="post" class="flex between mb-30">
           @csrf
           <table>
             <tr>
