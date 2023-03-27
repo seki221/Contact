@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-widthz, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{asset('/css/riset.css')}}">
-  <link rel="stylesheet" href="{{asset('/css/confirm.css')}}">
+  <link rel="stylesheet" href="{{asset('/css/manage.css')}}">
   <title>COACHTECH</title>
 
 </head>
@@ -26,8 +26,39 @@
       <div class="todo">
         <form action="/todo/create" method="post" class="flex between mb-30">
           @csrf
-          <input type="text" class="input-add" name="content" />
-          <input class="button-add" type="submit" value="追加" />
+          <table>
+            <tr>
+              <th>
+                お名前
+              </th>
+              <td><input type="text" class="manage_form" name="content"></td>
+              <td>
+                <label for="gender_male" class="male">
+                  <input id="gender_male" type="radio" name="gender" value="male" checked="checked" class="male" style="transform:scale(1.5);">
+                  男性
+                </label>
+                <label for="gender_female" class="female">
+                  <input id="gender_female" type="radio" name="gender" value="female" class="female" style="transform:scale(1.5);">女性
+                  <sp class="under_name">
+                    <label for="gender_male" class="male">
+                      <input id="gender_male" type="radio" name="gender" value="male" class="male" style="transform:scale(1.5);">
+                      男性
+                    </label>
+              </td>
+            </tr><br>
+            <tr>
+              <th>登録日</th>
+              <td><input type="text" class="manage_form" name="content" /></td>ー
+              <td><input type="text" class="manage_form" name="content" /></td><br>
+            </tr>
+            <tr>
+              <th>メールアドレス</th>
+              <td><input type="text" class="manage_form" name="content" /></td>
+            </tr>
+
+          </table>
+
+          <input class="button-add" type="submit" value="検索" />
         </form>
         <table>
           <tr>
@@ -37,17 +68,7 @@
             <th>メールアドレス</th>
             <th>ご意見</th>
           </tr>
-          @foreach($todos as $todo)
-          <tr>
-            <td>
-              <form action="{{ route('contacts.delete', ['id' => $contacts->id]) }}" method="post">
-                @csrf
-                @method('POST')
-                <button class="button-delete">削除</button>
-              </form>
-            </td>
-          </tr>
-          @endforeach
+          @include('Management/lists')
         </table>
       </div>
     </div>
