@@ -154,13 +154,13 @@ return [
     */
 
     'attributes' => [
-        'firstname.required' => '名字を入力してください',
+    'firstname.required' => '名字を入力してください',
     'lastname.required' => '名前を入力してください',
     'email.required' => 'メールアドレスを入力してください',
     'email.email' => 'メールアドレスの形式で入力してください',
-    'postcode'=>'ハイホンを含む数字で',
     'address'=>'住所',
     'opinion'=>'120以内で入力して下さい',
     ],
+    'postcode'=> ['numeric|string'=>'ハイホンを含む数字で'],
 
 ];

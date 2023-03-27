@@ -32,7 +32,7 @@ class ContactRequest extends FormRequest
     'lastname' => 'required|string',
     'gender' => 'required',
     'email' => 'required|email:rfc,dns',
-    'postcode'=>'required|nam_dash',
+    'postcode'=>'requested|nam_dash',
     'address' => 'required|string|num_dush',
     'opinion' => 'required|string|max:120',
     ];

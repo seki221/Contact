@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
-
-@seki221
-seki221
-/
-Contact
-Public
-Cannot fork because you own this repository and are not a member of any organizations.
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Contact/resources/views/top.blade.php
-@seki221
-seki221 変更
-Latest commit cbbb219 7 hours ago
-History
-1 contributor
-161 lines (156 sloc) 6.09 KB
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -48,10 +17,9 @@ History
   @if (count($errors) > 0)
   <p>入力に問題があります</p>
   @endif
-  <form method="POST" action="{{ route('confirm') }}" class="h-adr" style="float:left;">
+  <form method="POST" action="{{ route('confirm') }}" class="h-adr conteiner" ;>
     @csrf
-    @method('POST')
-    <div class="form-inner">
+    <div class="conteiner">
       <div class="form-cont">
         <table>
           <!-- 名前 -->
@@ -109,7 +77,7 @@ History
                 <label for="email" class="※">メールアドレス</label>
               </th>
               <td>
-                <input type="email" id="mail" name="email" value="{{ old('email') }}" class="size-input-email"><br>
+                <input type="email" id="mail" name="email" value="{{ old('email') }}" class="huge"><br>
                 <exmp class="under_form">例)test@example.com</exmp><br>
                 <sp class="under_name">
                   @error('email')
@@ -126,7 +94,7 @@ History
                 <label for="postal_code" class="※">郵便番号</label>
               </th>
               <td class=" postal_code">
-                〒<input type="text" name="postal_code" class="p-postal-code" maxlength="8" id="postcode" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" value="{{ old('postcode') }}" pattern="\d{3}-\d{4}"><br>
+                〒<input type="text" name="zip11" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');" size="60" value="{{ old('postcode') }}" class="posthuge p-postal-code posthuge"><br>
                 <exmp class="under_form">例)123-4567</exmp>
                 @if($errors->has('postcode'))
                 <p class="required">{{ $errors->first('postcode') }}</p>
@@ -141,9 +109,10 @@ History
                 <label for="address" class="※">住所</label>
               </th>
               <td>
-                <input type="text" id="address" name="address" value="{{ old('address') }}" class="huge p-region p-locality p-street-address p-extended-address"><br>
+                <input type="text" id="address" name="address" value="{{ old('address') }}" class="huge p-region p-locality p-street-address">
+                <br>
                 <exmp class="under_form">例)東京都渋谷区千駄ヶ谷1-2-3</exmp>
-                <sp class="ero">
+                <sp class="error">
                   @if($errors->has('address'))
                   <p class=" required">{{ $errors->first('address') }}</p>
                   @endif
@@ -159,7 +128,7 @@ History
                 <label for="building_name">建物名</label><br>
               </th>
               <td>
-                <input type="text" id="building_name" name="building_name" value="{{ old('building_name') }}" class="huge"><br>
+                <input type="text" id="building_name" name="building_name" value="{{ old('building_name') }}" class="huge "><br>
                 <exmp class="under_form">例)千駄ヶ谷マンション101</exmp>
                 @if($errors->has('building_name'))
                 <p class="required">{{ $errors->first('building_name') }}</p>
@@ -170,7 +139,7 @@ History
           <!-- ご意見 -->
           <div class="mg-b_40">
             <tr>
-              <th class="lavel_opinion">
+              <th class="lavel_th">
                 <label for="opinion" class="※">ご意見</label>
               </th>
               <td>
@@ -186,22 +155,12 @@ History
       </div>
     </div>
   </form>
+  <form action=" {{ route('Management.main') }}" method="main">
+    @csrf
+    @method('get')
+    <button type="submit" name="action">idou</button>
+  </form>
 
 </body>
 
 </html>
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Contact/top.blade.php at cbbb219fc1d5bc387a0e9269bf005990bf0ee470 · seki221/Contact

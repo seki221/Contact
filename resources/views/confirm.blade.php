@@ -28,14 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
   <form method="POST" action="{{ route('send') }}" class="confirm__ar">
-    {{ csrf_field() }}
-    {{ method_field('POST') }}
+    @csrf
+    @method('POST')
     <dl>
       <dt class="confirm__tag">お名前</dt>
-      <dd>{{ $contacts['firstname'] }}{{ $contacts['lastname'] }}
+      <dd>{{ $inputs['firstname'] }}{{ $inputs['lastname'] }}
       </dd>
-      <input type="hidden" name="fullname" value="{{ $contacts['firstname'] }}">
-      <input type="hidden" name="fullname" value="{{ $contacts['lastname'] }}">
+      <input type="hidden" name="fullname" value="{{ $inputs['firstname'] }}">
+      <input type="hidden" name="fullname" value="{{ $inputs['lastname'] }}">
+
     </dl>
     <dl>
       <dt class="confirm__tag">性別</dt>
@@ -47,26 +48,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <dd>{{ $contacts['email'] }}</dd>
       <input type="hidden" name="email" value="{{ $contacts['email'] }}">
     </dl>
-    <dl>
-      <dt class="confirm__tag">郵便番号</dt>
-      <dd>{{ $contacts['postal_code'] }}</dd>
-      <input type="hidden" name="postcode" value="{{ $contacts['postal_code'] }}">
-    </dl>
+
     <dl>
       <dt class="confirm__tag">住所</dt>
-      <dd>{{ $contacts['address'] }}</dd>
-      <input type="hidden" name="address" value="{{ $contacts['address'] }}">
+      <dd>{{ $inputs['address'] }}</dd>
+      <input type="hidden" name="address" value="{{ $inputs['address'] }}">
     </dl>
     <dl>
       <dt class="confirm__tag">建物名</dt>
-      <dd>{{ $contacts['building_name'] }}</dd>
-      <input type="hidden" name="building_name" value="{{ $contacts['building_name'] }}">
+      <dd>{{ $inputs['building_name'] }}</dd>
+      <input type="hidden" name="building_name" value="{{ $inputs['building_name'] }}">
     </dl>
     <dl>
       <dt class="confirm__tag">ご意見</dt>
       <dd>
-        {!! nl2br(e($contacts['opinion'])) !!}
-        <input type="hidden" name="opinion" value="{{ $contacts['opinion'] }}">
+        {!! nl2br(e($inputs['opinion'])) !!}
+        <input type="hidden" name="opinion" value="{{ $inputs['opinion'] }}">
       </dd>
     </dl>
     <div class="confirm_bk">

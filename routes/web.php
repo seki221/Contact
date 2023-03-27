@@ -23,3 +23,10 @@ Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 
 Route::get('/thanks', [CotactController::class, 'send']);
 Route::post('/thanks', [ContactController::class, 'send'])->name('send');
+Route::post('/todo/create', [CotactController::class, 'create'])->name('Management.create');
+
+Route::get('/Management/main', [CotactController::class, 'main'])->name('Management.main');
+Route::get('/find', [CotactController::class, 'find']);
+Route::post('/find', [CotactController::class, 'search']);
+
+Route::post('/Management/delete', [CotactController::class, 'delete'])->name('Managemant.delete');
