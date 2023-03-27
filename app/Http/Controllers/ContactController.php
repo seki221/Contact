@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactSendMail;
+use App\Models\Contact;
 
 
 class ContactController extends Controller
@@ -12,7 +13,7 @@ class ContactController extends Controller
     public function index()
     {
         return view('top', ['txt' => 'フォームを入力']);
-    dd('top');
+    
     }
 
 
@@ -22,9 +23,9 @@ class ContactController extends Controller
     }
     public function confirm(Request $request)
     {
-        $contacts = $request->all();
+        $inputs = $request->all();
         
-        if (!$contacts) {
+        if (!$inputs) {
             return redirect()->route('top');
         }
         $request->validate([
@@ -32,12 +33,12 @@ class ContactController extends Controller
             'lastname' => 'required',
             'gender' => 'required',
             'email' => ['required', ],
+            'postcode' => ['required|max:8', ],
             'address' => ['required', 'string'],
-            'postcode' => ['required', 'between:7,8'],
             'opinion' =>['required', 'string', 'max:255'],
         ]);
         return view('confirm', [
-            'contacts' => $contacts,
+            'inputs' => $inputs,
         ]);
     }
     public function send(Request $request)
@@ -55,5 +56,11 @@ class ContactController extends Controller
     //     $request->session()->regenerateToken(); //2回メール送信を防ぐため
     //     return view('thanks');
     // }
-    
+
+
+    public function main()
+    {
+        $contacts = Contact::simplepaginate(4);
+        return view('Management.main', ['contacts' => $contacts]);
+    }
 }
