@@ -1,0 +1,135 @@
+.card {
+  width: 50vw;
+  background-color: white;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+
+  line-height: 1;
+
+}
+
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.mb-30 {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+.input-add {
+  width: 80%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.button-add {
+  text-align: left;
+  border: 2px solid #dc70fa;
+  font-size: 12px;
+  color: hsl(287, 93%, 71%);
+  background-color: #fff;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  outline: none;
+  display: flex;
+  justify-content: center;
+}
+
+.button-add a {
+
+  background: #9fb7d4;
+}
+
+.button-add:hover {
+  background: hsla(287, 93%, 71%);
+  color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: initial;
+  width: 100%;
+  text-align: center;
+}
+
+tr {
+  display: table-row;
+  height: 50px;
+}
+
+th {
+  display: table-cell;
+  /* vertical-align: inherit; */
+  font-weight: bold;
+  text-align: -internal-center;
+}
+
+.button_edit {
+  text-align: left;
+  border: 2px solid #fa9770;
+  font-size: 12px;
+  color: #fa9770;
+  background-color: #fff;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  outline: none;
+}
+
+.button_edit:hover {
+  background: #fa9770;
+  color: #fff;
+}
+
+.button_delete {
+  text-align: right;
+  border: 2px solid #000;
+  /* font-size: 12px; */
+  color: #fff;
+  /* font-weight: bold; */
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  outline: none;
+  border-radius: 5%;
+}
+
