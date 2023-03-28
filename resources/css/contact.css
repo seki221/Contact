@@ -1,0 +1,32 @@
+h1{
+  text-align:center;
+  margin-top: 30px;
+}
+.asterisk{
+  color: red;
+}
+form{
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+.formtag{
+  padding: 0 auto 0; 
+}
+input{
+  float: right;
+  
+}
+
+button{  
+border-radius: 4px;
+  background: #000;
+  color: #ffffff;
+  width: 135px;
+  height: 32px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.label{
+  padding-top: 10px;
+}

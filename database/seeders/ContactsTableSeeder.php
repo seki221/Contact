@@ -17,8 +17,11 @@ class ContactsTableSeeder extends Seeder
             'firstname' => 'tony',
             'lastname' => 'tony',
             'gender' => 1,
-            'email' => 'American@yahoo.com'
-            ''
+            'email' => 'American@yahoo.com',
+            'address'=>'104-0031',
+            'postcode'=>'東京都中央区京橋',
+            'building_name'=>'', 
+            'opinion'=>'ご意見です',
         ];
         Contact::create($param);
     }

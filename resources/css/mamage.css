@@ -1,26 +1,35 @@
-.title mb-15{
+.title{
   margin-bottom: 15px;
+  text-align: center;
+  size: 30px;
+  
 }
-main {
+.main {
   background-color: #eee;
   /* 背景色指定 */
   height: 330px;
   /* 高さ指定 */
 }
-title mb-15
-.container {
-  display: block;
-  width: 80vw;
-  background-color: white;
-  padding: 30px;
+.contaner{
+  width: 100%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  border: #000;
 }
 
+.box  {
+  /* width: 50%; */
+  background-color: #000;
+  margin: 30px;
+  position: relative;   
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  border-radius: 10px;
+  margin-bottom: 10px; 
+  border: 1px solid #333333;
+}
+/* .box table{
+
+} */
 body {
   font-family: 'Nunito', sans-serif;
 
@@ -46,17 +55,17 @@ select {
   vertical-align: middle;
 }
 
-.input-add {
-  width: 80%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  appearance: none;
-  font-size: 14px;
-  outline: none;
+.button_find {
+  border-radius: 4px;
+  background: #000;
+  color: #ffffff;
+  width: 135px;
+  height: 32px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.div {
+/* .div {
   margin: 0;
   padding: 0;
   border: 0;
@@ -64,41 +73,15 @@ select {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
-}
+} */
 
-.button-add {
-  text-align: left;
-  border: 2px solid #dc70fa;
-  font-size: 12px;
-  color: hsl(287, 93%, 71%);
-  background-color: #fff;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.4s;
-  outline: none;
-  display: flex;
-  justify-content: center;
-}
-
-.button-add a {
-
-  background: #9fb7d4;
-}
-
-.button-add:hover {
-  background: hsla(287, 93%, 71%);
-  color: #fff;
-}
-
-table {
+/* table {
   border-collapse: collapse;
   border-spacing: 0;
   text-indent: initial;
   width: 100%;
   text-align: center;
-}
+} */
 
 tr {
   display: table-row;
@@ -110,25 +93,6 @@ th {
   /* vertical-align: inherit; */
   font-weight: bold;
   text-align: -internal-center;
-}
-
-.button_edit {
-  text-align: left;
-  border: 2px solid #fa9770;
-  font-size: 12px;
-  color: #fa9770;
-  background-color: #fff;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.4s;
-  outline: none;
-}
-
-.button_edit:hover {
-  background: #fa9770;
-  color: #fff;
 }
 
 .button_delete {

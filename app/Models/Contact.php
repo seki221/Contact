@@ -10,7 +10,7 @@ use Model\User;
 class Contact extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'firstname','lastname', 'gender','mail','address','building_name','opinion','created_at', 'update_at'];
+    protected $fillable = ['id', 'firstname','lastname', 'gender','email','address','postcode','building_name','opinion','created_at', 'update_at'];
     protected $table = 'contacts';
     /**
      * 一覧画面表示用にcontactsテーブルから全てのデータを取得
@@ -21,7 +21,7 @@ class Contact extends Model
     }
 
     /**
-     * リクエストされたIDをもとにtodosテーブルのレコードを1件取得
+     * リクエストされたIDをもとにcontactテーブルのレコードを1件取得
      */
     public function findContactById($id)
     {

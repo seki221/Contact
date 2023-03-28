@@ -6,6 +6,7 @@
             <form action="{{ route('destroy',['id'=>$contacts->id]) }}" method="POST">
               @csrf
               @method('POST')
+              {{ $contacts->links() }}
               <button type="submit" class="button_delete">削除</button>
             </form>
           </div>
