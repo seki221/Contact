@@ -107,7 +107,10 @@
       outline: none;
       border-radius: 5%;
     }
-    a{text-align: center;}
+
+    div.center {
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -157,8 +160,8 @@
               </tr>
             </table>
             <input class="button_find" type="submit" value="検索" /><br>
-            <a href="http://">リセット</a>
-          </div>
+            <div class="center"><a href="http://">リセット</a></div>
+            </div>
         </form>
       </div>
       <div class="manage_list">
