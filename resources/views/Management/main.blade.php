@@ -5,11 +5,110 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-widthz, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{{asset('/css/riset.css')}}">
-  <link rel="stylesheet" href="{{asset('/css/manage.css')}}">
+  <link rel="stylesheet" href='/css/reset.css'>
+  <link rel="stylesheet" href='/css/manage.css'>
 
   <title>COACHTECH</title>
 
+  <style>
+    .main {
+      background-color: #eee;
+      /* 背景色指定 */
+      height: 330px;
+      /* 高さ指定 */
+    }
+
+    .contaner {
+      width: 100%;
+      position: absolute;
+    }
+
+    .box {
+      /* width: 50%; */
+      margin: 30px;
+      position: relative;
+      top: 50%;
+      margin-left: 10%;
+      margin-right: 10%;
+      /* transform: translate(-50%, -50%); */
+      /* border-radius: 10px; */
+      margin-bottom: 10px;
+      border: 1px solid #333333;
+    }
+
+    /* .box table{
+
+} */
+    body {
+      font-family: 'Nunito', sans-serif;
+
+      line-height: 1;
+
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .button_find {
+      border-radius: 4px;
+      background: #000;
+      color: #ffffff;
+      width: 135px;
+      height: 32px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* .div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+} */
+
+    /* table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: initial;
+  width: 100%;
+  text-align: center;
+} */
+
+    tr {
+      display: table-row;
+      height: 50px;
+    }
+
+    th {
+      display: table-cell;
+      /* vertical-align: inherit; */
+      font-weight: bold;
+      text-align: -internal-center;
+    }
+
+    .button_delete {
+      text-align: right;
+      border: 2px solid #000;
+      /* font-size: 12px; */
+      color: #fff;
+      /* font-weight: bold; */
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.4s;
+      outline: none;
+      border-radius: 5%;
+    }
+    a{text-align: center;}
+  </style>
 </head>
 
 <body>
@@ -57,7 +156,8 @@
                 <td><input type="text" class="manage_form" name="content" /></td>
               </tr>
             </table>
-            <input class="button_find" type="submit" value="検索" />
+            <input class="button_find" type="submit" value="検索" /><br>
+            <a href="http://">リセット</a>
           </div>
         </form>
       </div>

@@ -1,9 +1,4 @@
-.title{
-  margin-bottom: 15px;
-  text-align: center;
-  size: 30px;
-  
-}
+
 .main {
   background-color: #eee;
   /* 背景色指定 */
@@ -17,13 +12,12 @@
 
 .box  {
   /* width: 50%; */
-  background-color: #000;
   margin: 30px;
   position: relative;   
   top: 50%;
   left: 50%;
   /* transform: translate(-50%, -50%); */
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin-bottom: 10px; 
   border: 1px solid #333333;
 }
@@ -42,17 +36,6 @@ body {
   font-size: 24px;
   margin-bottom: 15px;
   text-align: center;
-}
-
-.mb-30 {
-  display: flex;
-  margin-bottom: 30px;
-  justify-content: space-between;
-}
-
-input,
-select {
-  vertical-align: middle;
 }
 
 .button_find {
